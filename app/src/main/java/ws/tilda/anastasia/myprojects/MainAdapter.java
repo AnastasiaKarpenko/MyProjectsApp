@@ -24,6 +24,11 @@ public class MainAdapter extends BaseAdapter {
         mLayoutInflater = LayoutInflater.from(context);
     }
 
+    public void addItems(List<ProjectModel> list) {
+        mProjectList.addAll(list);
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         return mProjectList.size();
