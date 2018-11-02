@@ -40,7 +40,10 @@ public class MainAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int position, View view, ViewGroup viewGroup) {
+        ItemLayoutBinding mBinding = ItemLayoutBinding.inflate(mLayoutInflater, viewGroup, false);
+        mBinding.tvTitle.setText(mProjectList.get(position).title);
+
+        return mBinding.getRoot();
     }
 }
