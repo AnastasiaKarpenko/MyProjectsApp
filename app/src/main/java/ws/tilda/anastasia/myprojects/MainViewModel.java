@@ -10,9 +10,14 @@ public class MainViewModel extends ViewModel {
     List<ProjectModel> projectsList = new ArrayList<>();
 
     public void setProjectList() {
-//        ListView projectListView = findViewById(R.id.listview);
-//        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, projectList);
-//        projectListView.setAdapter(arrayAdapter);
+        List<ProjectModel> dummyProjectList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            ProjectModel projectModel = new ProjectModel();
+            projectModel.title = "Project " + i;
+            dummyProjectList.add(projectModel);
+        }
+
+        projectsList.addAll(dummyProjectList);
     }
 
 
