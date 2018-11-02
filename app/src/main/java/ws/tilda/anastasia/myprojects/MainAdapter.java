@@ -1,10 +1,23 @@
 package ws.tilda.anastasia.myprojects;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class MainAdapter extends BaseAdapter {
+
+    Context mContext;
+    MainViewModel mViewModel;
+    LayoutInflater mLayoutInflater;
+
+    public MainAdapter(Context context, MainViewModel viewModel) {
+        mContext = context;
+        mViewModel = viewModel;
+        mLayoutInflater = LayoutInflater.from(context);
+    }
+
     @Override
     public int getCount() {
         return 0;
