@@ -6,11 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ws.tilda.anastasia.myprojects.databinding.ItemLayoutBinding;
+
 public class MainAdapter extends BaseAdapter {
 
     Context mContext;
     MainViewModel mViewModel;
     LayoutInflater mLayoutInflater;
+    List<ProjectModel> mProjectList = new ArrayList<>();
 
     public MainAdapter(Context context, MainViewModel viewModel) {
         mContext = context;
@@ -20,17 +26,17 @@ public class MainAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return mProjectList.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public Object getItem(int position) {
+        return mProjectList.get(position);
     }
 
     @Override
-    public long getItemId(int i) {
-        return 0;
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
