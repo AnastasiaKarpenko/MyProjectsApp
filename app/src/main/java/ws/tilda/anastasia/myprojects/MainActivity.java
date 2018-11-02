@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mViewModel = new MainViewModel();
 
+        mBinding.setViewModel(mViewModel);
 
         setProjectList();
     }
