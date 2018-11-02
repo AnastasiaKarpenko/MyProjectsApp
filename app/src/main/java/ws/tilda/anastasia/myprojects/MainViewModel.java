@@ -16,9 +16,10 @@ public class MainViewModel extends ViewModel {
             projectModel.title = "Project " + i;
             dummyProjectList.add(projectModel);
         }
-
         projectsList.addAll(dummyProjectList);
     }
 
-
+    public List<ProjectModel> getProjectsList() {
+        return projectsList;
+    }
 }
