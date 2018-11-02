@@ -13,12 +13,15 @@ public class MainActivity extends AppCompatActivity {
     String[] projectList = {"Project1", "Project2", "Project3"};
 
     ActivityMainBinding mBinding;
+    MainViewModel mViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mViewModel = new MainViewModel();
+
 
         setProjectList();
     }
