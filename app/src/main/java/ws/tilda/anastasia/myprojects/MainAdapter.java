@@ -44,9 +44,11 @@ public class MainAdapter extends BaseAdapter {
         return position;
     }
 
+
+    //Method that sets the Adapter
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        ItemLayoutBinding mBinding = ItemLayoutBinding.inflate(mLayoutInflater, viewGroup, false);
+        ItemLayoutBinding mBinding = ItemLayoutBinding.inflate(mLayoutInflater, viewGroup,false);
         mBinding.tvTitle.setText(mProjectList.get(position).title);
 
         return mBinding.getRoot();
