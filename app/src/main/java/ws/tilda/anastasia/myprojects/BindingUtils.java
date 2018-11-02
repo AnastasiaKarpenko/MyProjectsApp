@@ -13,6 +13,7 @@ public class BindingUtils {
             return;
         }
         MainAdapter adapter = (MainAdapter) listView.getAdapter();
+        adapter.addItems(list);
     }
 
 }
