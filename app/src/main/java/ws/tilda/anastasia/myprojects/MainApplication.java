@@ -20,6 +20,12 @@ public class MainApplication extends Application {
     }
 
     private void initializeComponents() {
+        mMainComponent = DaggerMainComponent.builder()
+                .projectModule(new ProjectModule(this))
+                .build();
+    }
 
+    public MainComponent getMainComponent() {
+        return  mMainComponent;
     }
 }
