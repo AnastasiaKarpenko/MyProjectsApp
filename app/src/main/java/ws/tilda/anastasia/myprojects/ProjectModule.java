@@ -17,7 +17,7 @@ public class ProjectModule {
 
     @Provides
     @Singleton
-    List<ProjectModel> provideProjectList() {
+    List<ProjectModel> providesProjectList() {
         List<ProjectModel> dummyProjectList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             ProjectModel projectModel = new ProjectModel();
@@ -29,7 +29,7 @@ public class ProjectModule {
 
     @Provides
     @Singleton
-    ProjectRepository providesProjectRepository(List<ProjectModel> projectList) {
-        return new ProjectRepository(projectList);
+    ProjectRepository providesProjectRepository(List<ProjectModel> projectModelList) {
+        return new ProjectRepository(projectModelList);
     }
 }

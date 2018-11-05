@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
     @Override
     protected void onStart() {
         super.onStart();
+
         final MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         observeViewModel(viewModel);
 
