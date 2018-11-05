@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, M
     protected void onStart() {
         super.onStart();
 
-        final MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        observeViewModel(viewModel);
+        final MainPresenter mainPresenter = ViewModelProviders.of(this).get(MainPresenter.class);
+        observeMainPresenter(mainPresenter);
 
     }
 
-    private void observeViewModel(MainViewModel viewModel) {
-        viewModel.getProjectsListObservable().observe(this, new Observer<List<ProjectModel>>() {
+    private void observeMainPresenter(MainPresenter mainPresenter) {
+        mainPresenter.getProjectsListObservable().observe(this, new Observer<List<ProjectModel>>() {
             @Override
             public void onChanged(@Nullable List<ProjectModel> projectModels) {
                 mMainAdapter.addItems(projectModels);
