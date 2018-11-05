@@ -1,6 +1,5 @@
 package ws.tilda.anastasia.myprojects;
 
-import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
@@ -10,6 +9,7 @@ import javax.inject.Inject;
 
 public class MainViewModel extends AndroidViewModel {
     public final LiveData<List<ProjectModel>> projectListing;
+
 
     @Inject
     ProjectRepository mProjectRepository;
