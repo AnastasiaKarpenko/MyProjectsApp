@@ -7,15 +7,15 @@ import android.arch.lifecycle.LiveData;
 import java.util.List;
 
 public class MainViewModel extends AndroidViewModel {
-    public final LiveData<List<ProjectModel>> projectsListings;
+    public final LiveData<List<ProjectModel>> projectListing;
 
     MainViewModel(Application application) {
         super(application);
-        projectsListings = ProjectRepository.getInstance().getProjectList();
+        projectListing = ProjectRepository.getInstance().getProjectList();
     }
 
     public LiveData<List<ProjectModel>> getProjectsListObservable() {
-        return projectsListings;
+        return projectListing;
     }
 
 
