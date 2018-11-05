@@ -19,6 +19,7 @@ public class MainViewModel extends AndroidViewModel {
         projectListing = mProjectRepository.getProjectList();
     }
 
+
     // Expose the LiveData Projects query so the UI can observe it.
     public LiveData<List<ProjectModel>> getProjectsListObservable() {
         return projectListing;
