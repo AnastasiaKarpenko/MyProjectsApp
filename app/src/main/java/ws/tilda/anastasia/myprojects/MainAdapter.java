@@ -14,6 +14,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainAdapter extends BaseAdapter {
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
     Context mContext;
     LayoutInflater mLayoutInflater;
@@ -45,8 +47,7 @@ public class MainAdapter extends BaseAdapter {
     }
 
 
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
