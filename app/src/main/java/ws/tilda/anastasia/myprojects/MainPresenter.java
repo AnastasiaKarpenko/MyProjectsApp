@@ -12,10 +12,12 @@ public class MainPresenter extends AndroidViewModel implements MainContractor.Pr
 
     public final LiveData<List<ProjectModel>> projectListing;
 
-
     @Inject
     ProjectRepository mProjectRepository;
 
+    MainContractor.MainView mMainView;
+
+    @Inject
     public MainPresenter(Application application) {
         super(application);
         MainApplication.getMainApplication().getMainComponent().inject(this);
@@ -26,5 +28,10 @@ public class MainPresenter extends AndroidViewModel implements MainContractor.Pr
     // Expose the LiveData Projects query so the UI can observe it.
     public LiveData<List<ProjectModel>> getProjectsListObservable() {
         return projectListing;
+    }
+
+    @Override
+    public void setUpPresenter(MainContractor.MainView mainView) {
+        mMainView = mainView;
     }
 }

@@ -1,5 +1,6 @@
 package ws.tilda.anastasia.myprojects;
 
+import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
@@ -14,8 +15,9 @@ public class MainViewModel extends AndroidViewModel {
     @Inject
     ProjectRepository mProjectRepository;
 
-    public MainViewModel(MainApplication mainApplication) {
-        super(mainApplication);
+    public MainViewModel(Application application) {
+        super(application);
+        MainApplication.getMainApplication().getMainComponent().inject(this);
         projectListing = mProjectRepository.getProjectList();
     }
 

@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, M
         super.onStart();
 
         final MainPresenter mainPresenter = ViewModelProviders.of(this).get(MainPresenter.class);
+        mainPresenter.setUpPresenter(this);
         observeMainPresenter(mainPresenter);
 
     }
