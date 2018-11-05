@@ -46,9 +46,6 @@ public class MainAdapter extends BaseAdapter {
         return position;
     }
 
-
-
-
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         View view = mLayoutInflater.inflate(R.layout.item_layout, null);
