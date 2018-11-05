@@ -1,7 +1,5 @@
 package ws.tilda.anastasia.myprojects;
 
-import android.app.Application;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +11,7 @@ import dagger.Provides;
 @Module
 public class ProjectModule {
 
-    public ProjectModule(Application application) {
+    public ProjectModule(MainApplication application) {
 
     }
 
