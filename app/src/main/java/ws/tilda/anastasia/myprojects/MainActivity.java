@@ -42,10 +42,13 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, M
     }
 
     private void observeMainPresenter(MainPresenter mainPresenter) {
+
         mainPresenter.getProjectsListObservable().observe(this, new Observer<List<ProjectModel>>() {
             @Override
             public void onChanged(@Nullable List<ProjectModel> projectModels) {
-                mMainAdapter.addItems(projectModels);
+                if(projectModels != null) {
+                    mMainAdapter.addItems(projectModels);
+                }
             }
         });
     }
