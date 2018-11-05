@@ -14,8 +14,8 @@ public class MainViewModel extends AndroidViewModel {
     @Inject
     ProjectRepository mProjectRepository;
 
-    public MainViewModel(MainApplication application) {
-        super(application);
+    public MainViewModel(MainApplication mainApplication) {
+        super(mainApplication);
         projectListing = mProjectRepository.getProjectList();
     }
 
