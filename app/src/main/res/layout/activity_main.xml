@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
 
     <data>
 
         <variable
             name="viewModel"
-            type="ws.tilda.anastasia.myprojects.MainViewModel"/>
+            type="ws.tilda.anastasia.myprojects.MainViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,8 +17,7 @@
         <ListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:projectItem="@{viewModel.projectsList}">
+            android:layout_height="match_parent">
 
         </ListView>
 

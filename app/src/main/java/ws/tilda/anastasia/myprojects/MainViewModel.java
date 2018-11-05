@@ -9,7 +9,7 @@ import java.util.List;
 public class MainViewModel extends AndroidViewModel {
     public final LiveData<List<ProjectModel>> projectListing;
 
-    MainViewModel(Application application) {
+    public MainViewModel(Application application) {
         super(application);
         projectListing = ProjectRepository.getInstance().getProjectList();
     }

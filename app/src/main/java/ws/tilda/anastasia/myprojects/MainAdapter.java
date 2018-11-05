@@ -14,13 +14,11 @@ import ws.tilda.anastasia.myprojects.databinding.ItemLayoutBinding;
 public class MainAdapter extends BaseAdapter {
 
     Context mContext;
-    MainViewModel mViewModel;
     LayoutInflater mLayoutInflater;
     List<ProjectModel> mProjectList = new ArrayList<>();
 
-    public MainAdapter(Context context, MainViewModel viewModel) {
+    public MainAdapter(Context context) {
         mContext = context;
-        mViewModel = viewModel;
         mLayoutInflater = LayoutInflater.from(context);
     }
 
