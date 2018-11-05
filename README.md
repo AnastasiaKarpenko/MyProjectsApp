@@ -1,6 +1,6 @@
 # MyProjectsApp
-An app that manages the list of personal user's projects. 
-I made the app to learn about:
+An app that manages the list of my personal projects. In progress.
+I am working on this app to learn about:
 - MVP, 
 - MVVM, 
 - and clean architecture,
