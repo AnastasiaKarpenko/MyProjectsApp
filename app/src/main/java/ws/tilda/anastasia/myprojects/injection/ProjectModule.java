@@ -1,4 +1,4 @@
-package ws.tilda.anastasia.myprojects;
+package ws.tilda.anastasia.myprojects.injection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,10 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import ws.tilda.anastasia.myprojects.MainAdapter;
+import ws.tilda.anastasia.myprojects.ProjectModel;
+import ws.tilda.anastasia.myprojects.ProjectRepository;
+import ws.tilda.anastasia.myprojects.injection.MainApplication;
 
 @Module
 public class ProjectModule {
@@ -22,7 +26,7 @@ public class ProjectModule {
         List<ProjectModel> dummyProjectList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             ProjectModel projectModel = new ProjectModel();
-            projectModel.title = "Project " + i;
+            projectModel.setTitle("Project " + i);
             dummyProjectList.add(projectModel);
         }
         return dummyProjectList;

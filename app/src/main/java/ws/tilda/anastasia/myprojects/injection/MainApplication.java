@@ -1,4 +1,4 @@
-package ws.tilda.anastasia.myprojects;
+package ws.tilda.anastasia.myprojects.injection;
 
 import android.app.Application;
 
@@ -26,6 +26,6 @@ public class MainApplication extends Application {
     }
 
     public MainComponent getMainComponent() {
-        return  mMainComponent;
+        return mMainComponent;
     }
 }

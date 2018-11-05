@@ -8,6 +8,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import ws.tilda.anastasia.myprojects.injection.MainApplication;
+
 public class MainPresenter extends AndroidViewModel implements MainContractor.Presenter {
 
     public final LiveData<List<ProjectModel>> projectListing;
