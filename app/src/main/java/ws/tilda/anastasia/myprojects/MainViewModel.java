@@ -18,5 +18,4 @@ public class MainViewModel extends AndroidViewModel {
         return projectListing;
     }
 
-
 }
