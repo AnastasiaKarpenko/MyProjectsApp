@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
     ActivityMainBinding mBinding;
     MainAdapter mMainAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
