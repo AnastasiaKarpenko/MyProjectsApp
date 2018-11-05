@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import ws.tilda.anastasia.myprojects.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
-    String[] projectList = {"Project1", "Project2", "Project3"};
-
     ActivityMainBinding mBinding;
     MainViewModel mViewModel;
 
@@ -19,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mViewModel = new MainViewModel();
+        MainAdapter arrayAdapter = new MainAdapter(this, mViewModel);
+        mBinding.projectList.setAdapter(arrayAdapter);
 
         mBinding.setViewModel(mViewModel);
 
