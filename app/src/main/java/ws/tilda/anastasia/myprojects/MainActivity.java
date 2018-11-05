@@ -12,7 +12,7 @@ import java.util.List;
 
 import ws.tilda.anastasia.myprojects.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements LifecycleOwner {
+public class MainActivity extends AppCompatActivity implements LifecycleOwner, MainContractor.MainView {
     ActivityMainBinding mBinding;
     MainAdapter mMainAdapter;
 
