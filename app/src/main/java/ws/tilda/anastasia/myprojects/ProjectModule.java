@@ -10,9 +10,10 @@ import dagger.Provides;
 
 @Module
 public class ProjectModule {
+    MainApplication mMainApplication;
 
     public ProjectModule(MainApplication application) {
-
+        mMainApplication = application;
     }
 
     @Provides
@@ -31,5 +32,11 @@ public class ProjectModule {
     @Singleton
     ProjectRepository providesProjectRepository(List<ProjectModel> projectModelList) {
         return new ProjectRepository(projectModelList);
+    }
+
+    @Provides
+    @Singleton
+    MainAdapter providesMainAdapter () {
+        return new MainAdapter(mMainApplication.getApplicationContext());
     }
 }

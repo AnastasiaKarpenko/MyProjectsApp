@@ -10,11 +10,15 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner, MainContractor.MainView {
+    @Inject
     MainAdapter mMainAdapter;
+
     @BindView(R.id.listview)
     ListView projectList;
 
@@ -24,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, M
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mMainAdapter = new MainAdapter(this);
         projectList.setAdapter(mMainAdapter);
     }
 
