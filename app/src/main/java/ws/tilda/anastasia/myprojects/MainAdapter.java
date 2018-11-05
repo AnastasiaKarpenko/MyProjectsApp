@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ws.tilda.anastasia.myprojects.databinding.ItemLayoutBinding;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainAdapter extends BaseAdapter {
 
@@ -43,12 +45,15 @@ public class MainAdapter extends BaseAdapter {
     }
 
 
-    //Method that sets the Adapter
-    @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
-        ItemLayoutBinding mBinding = ItemLayoutBinding.inflate(mLayoutInflater, viewGroup,false);
-        mBinding.tvTitle.setText(mProjectList.get(position).title);
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
-        return mBinding.getRoot();
+    @Override
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
+        View view = mLayoutInflater.inflate(R.layout.item_layout, null);
+        ButterKnife.bind(this, view);
+        tvTitle.setText(mProjectList.get(position).title);
+
+        return view;
     }
 }
