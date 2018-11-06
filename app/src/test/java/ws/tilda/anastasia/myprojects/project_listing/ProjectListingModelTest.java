@@ -3,11 +3,15 @@ package ws.tilda.anastasia.myprojects.project_listing;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class ProjectListingModelTest {
     ProjectListingModel mProjectListingModel;
     Boolean check;
+    List<ProjectModel> projectModelList;
 
     @Before
     public void setUp() throws Exception {
@@ -16,6 +20,10 @@ public class ProjectListingModelTest {
 
     @Test
     public void getProjectListObservable() {
+        mProjectListingModel.getProjectListObservable().subscribe(projectModelList -> {
+            this.projectModelList = projectModelList;
+        });
+        assertNotNull(projectModelList);
     }
 
     @Test

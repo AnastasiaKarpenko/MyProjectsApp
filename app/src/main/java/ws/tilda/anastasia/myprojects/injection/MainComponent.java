@@ -12,4 +12,5 @@ public interface MainComponent {
     void inject(MainApplication mainApplication);
 
     void inject(MainPresenter mainPresenter);
+
 }

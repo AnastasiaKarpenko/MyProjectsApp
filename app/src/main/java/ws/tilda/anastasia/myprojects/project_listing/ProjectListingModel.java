@@ -11,13 +11,13 @@ import io.reactivex.functions.Function;
 public class ProjectListingModel {
     List<ProjectModel> mProjectModelList;
 
+
     @Inject
-    ProjectListingModel() {
+    public ProjectListingModel() {
 
     }
 
     Observable<List<ProjectModel>> getProjectListObservable() {
-
         mProjectModelList = new ArrayList<>();
 
         return Observable.range(0, 5)

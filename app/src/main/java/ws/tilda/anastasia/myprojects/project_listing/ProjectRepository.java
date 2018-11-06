@@ -9,10 +9,10 @@ import javax.inject.Inject;
 
 public class ProjectRepository {
 
-    //    @Inject
+    @Inject
     ProjectListingModel mProjectListingModel;
 
-    @Inject
+    //@Inject
     public ProjectRepository() {
 
     }
