@@ -59,13 +59,10 @@ public class MainViewModel extends ViewModel {
     }
 
     public void setProjectList() {
-        List<ProjectModel> dummyProjectList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            ProjectModel projectModel = new ProjectModel();
-            projectModel.title = "Project " + i;
-            dummyProjectList.add(projectModel);
-        }
-        projectsList.addAll(dummyProjectList);
+        initializeObservable();
+        initializeObserver();
+
+        mObservable.subscribe(mObserver);
     }
 
     public List<ProjectModel> getProjectsList() {
