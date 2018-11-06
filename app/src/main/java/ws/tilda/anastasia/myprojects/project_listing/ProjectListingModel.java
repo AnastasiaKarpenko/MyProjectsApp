@@ -9,16 +9,16 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
 public class ProjectListingModel {
+    List<ProjectModel> mProjectModelList;
 
     @Inject
     ProjectListingModel() {
 
     }
 
-    List<ProjectModel> mProjectModelList;
-
     Observable<List<ProjectModel>> getProjectListObservable() {
 
+        mProjectModelList = new ArrayList<>();
 
         return Observable.range(0, 5)
                 .map(new Function<Integer, List<ProjectModel>>() {
