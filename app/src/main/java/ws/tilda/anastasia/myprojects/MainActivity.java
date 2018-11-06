@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         mViewModel = new MainViewModel();
 
         mBinding.setViewModel(mViewModel);
+        mBinding.listview.setAdapter(new MainAdapter(this, mViewModel));
 
         setProjectList();
     }
