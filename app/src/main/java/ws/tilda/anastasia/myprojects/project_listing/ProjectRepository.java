@@ -6,7 +6,12 @@ import android.os.CountDownTimer;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class ProjectRepository {
+    @Inject
+    ProjectListingModel mProjectListingModel;
+
     List<ProjectModel> mProjectModelList;
 
     public ProjectRepository(List<ProjectModel> projectModelList) {
