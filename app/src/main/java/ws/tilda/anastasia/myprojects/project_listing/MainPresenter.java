@@ -12,28 +12,28 @@ import ws.tilda.anastasia.myprojects.injection.MainApplication;
 
 public class MainPresenter extends AndroidViewModel implements MainContractor.Presenter {
 
-    public final LiveData<List<ProjectModel>> projectListing;
+    public final LiveData<List<ProjectModel>> projectListings;
 
     @Inject
-    ProjectRepository mProjectRepository;
+    ProjectRepository projectRepository;
 
-    MainContractor.MainView mMainView;
+    MainContractor.MainView mainView;
 
     @Inject
     public MainPresenter(Application application) {
         super(application);
         MainApplication.getMainApplication().getMainComponent().inject(this);
-        projectListing = mProjectRepository.getProjectList();
-    }
-
-
-    // Expose the LiveData Projects query so the UI can observe it.
-    public LiveData<List<ProjectModel>> getProjectsListObservable() {
-        return projectListing;
+        projectListings = projectRepository.getProjectList();
     }
 
     @Override
     public void setUpPresenter(MainContractor.MainView mainView) {
-        mMainView = mainView;
+        this.mainView = mainView;
     }
+
+    @Override
+    public LiveData<List<ProjectModel>> getProjectListObservable() {
+        return projectListings;
+    }
+
 }

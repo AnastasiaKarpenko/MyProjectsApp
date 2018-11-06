@@ -10,14 +10,12 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ws.tilda.anastasia.myprojects.R;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner, MainContractor.MainView {
-    @Inject
+
     MainAdapter mMainAdapter;
 
     @BindView(R.id.listview)
@@ -29,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, M
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mMainAdapter = new MainAdapter(this);
         projectList.setAdapter(mMainAdapter);
     }
 
@@ -44,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner, M
 
     private void observeMainPresenter(MainPresenter mainPresenter) {
 
-        mainPresenter.getProjectsListObservable().observe(this, new Observer<List<ProjectModel>>() {
+        mainPresenter.getProjectListObservable().observe(this, new Observer<List<ProjectModel>>() {
             @Override
             public void onChanged(@Nullable List<ProjectModel> projectModels) {
-                if(projectModels != null) {
+                if (projectModels != null) {
                     mMainAdapter.addItems(projectModels);
                 }
             }

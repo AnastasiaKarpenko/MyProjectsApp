@@ -1,30 +1,31 @@
 package ws.tilda.anastasia.myprojects.injection;
 
+import android.app.Application;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import ws.tilda.anastasia.myprojects.project_listing.MainAdapter;
-import ws.tilda.anastasia.myprojects.project_listing.ProjectRepository;
+import ws.tilda.anastasia.myprojects.project_listing.ProjectListingModel;
 
 @Module
 public class ProjectModule {
-    MainApplication mMainApplication;
+    Application mApplication;
 
-    public ProjectModule(MainApplication application) {
-        mMainApplication = application;
+    public ProjectModule(Application application) {
+        mApplication = application;
     }
-
 
     @Provides
     @Singleton
-    ProjectRepository providesProjectRepository() {
-        return new ProjectRepository();
+    ProjectListingModel provideProjectListModel() {
+        return new ProjectListingModel();
     }
 
     @Provides
     @Singleton
     MainAdapter providesMainAdapter() {
-        return new MainAdapter(mMainApplication.getApplicationContext());
+        return new MainAdapter(mApplication.getApplicationContext());
     }
 }

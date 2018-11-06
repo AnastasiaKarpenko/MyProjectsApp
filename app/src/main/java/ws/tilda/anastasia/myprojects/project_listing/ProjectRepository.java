@@ -10,27 +10,28 @@ import javax.inject.Inject;
 public class ProjectRepository {
 
     @Inject
-    ProjectListingModel mProjectListingModel;
+    ProjectListingModel projectListingModel;
 
-    //@Inject
+    @Inject
     public ProjectRepository() {
-
     }
 
     public LiveData<List<ProjectModel>> getProjectList() {
+
         final MutableLiveData<List<ProjectModel>> data = new MutableLiveData<>();
 
-        mProjectListingModel.getProjectListObservable().subscribe(list -> {
-            data.setValue(list);
+        projectListingModel.getProjectListObservable().subscribe(s -> {
+            data.setValue(s);
         }, throwable -> {
-            handleRxException(throwable);
+            handleThrowable(throwable);
         });
 
         return data;
     }
 
-    private void handleRxException(Throwable throwable) {
-
+    private void handleThrowable(Throwable throwable) {
+        //Handle Error
     }
 
 }
+

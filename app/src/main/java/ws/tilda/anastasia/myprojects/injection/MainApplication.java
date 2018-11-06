@@ -5,7 +5,7 @@ import android.app.Application;
 public class MainApplication extends Application {
 
     private static MainApplication mMainApplication;
-    MainComponent mMainComponent;
+    MainComponent mainComponent;
 
     public static MainApplication getMainApplication() {
         return mMainApplication;
@@ -14,18 +14,21 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         mMainApplication = this;
-        initializeComponents();
-        mMainComponent.inject(this);
+
+        initMainComponent();
+
+        mainComponent.inject(this);
     }
 
-    private void initializeComponents() {
-        mMainComponent = DaggerMainComponent.builder()
+    private void initMainComponent() {
+        mainComponent = DaggerMainComponent.builder()
                 .projectModule(new ProjectModule(this))
                 .build();
     }
 
     public MainComponent getMainComponent() {
-        return mMainComponent;
+        return mainComponent;
     }
 }
