@@ -22,7 +22,6 @@ public class ProjectRepository {
     }
 
     public LiveData<List<ProjectModel>> getProjectList() {
-
         mProjectListingModel.isNetworkAvailable().doOnNext(networkAvailable -> {
             if (!networkAvailable) {
                 //show error
@@ -32,7 +31,6 @@ public class ProjectRepository {
                 .subscribe(projects -> {
                     items  = (ArrayList<ProjectModel>) projects;
                 });
-
         final MutableLiveData<List<ProjectModel>> data = new MutableLiveData<>();
 
         // CountDownTimer will be called every 30 seconds and update the view with the new data
