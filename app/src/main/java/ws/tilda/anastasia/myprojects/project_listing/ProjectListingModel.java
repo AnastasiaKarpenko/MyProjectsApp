@@ -26,4 +26,11 @@ public class ProjectListingModel {
     }
 
 
+    //Currently we are not calling any network, so this implementation is for now.
+
+    Observable<Boolean> isNetworkAvailable() {
+        return Observable.just(true);
+    }
+
+
 }
