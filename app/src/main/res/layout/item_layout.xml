@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="ws.tilda.anastasia.myprojects.MainViewModel" />
+            type="ws.tilda.anastasia.myprojects.project_listing.MainViewModel" />
 
     </data>
 

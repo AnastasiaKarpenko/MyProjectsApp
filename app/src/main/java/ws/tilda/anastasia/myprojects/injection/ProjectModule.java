@@ -7,10 +7,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import ws.tilda.anastasia.myprojects.MainAdapter;
-import ws.tilda.anastasia.myprojects.ProjectModel;
-import ws.tilda.anastasia.myprojects.ProjectRepository;
-import ws.tilda.anastasia.myprojects.injection.MainApplication;
+import ws.tilda.anastasia.myprojects.project_listing.MainAdapter;
+import ws.tilda.anastasia.myprojects.project_listing.ProjectModel;
+import ws.tilda.anastasia.myprojects.project_listing.ProjectRepository;
 
 @Module
 public class ProjectModule {

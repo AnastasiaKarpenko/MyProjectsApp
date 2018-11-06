@@ -1,4 +1,4 @@
-package ws.tilda.anastasia.myprojects;
+package ws.tilda.anastasia.myprojects.project_listing;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;

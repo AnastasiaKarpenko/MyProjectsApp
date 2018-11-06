@@ -1,4 +1,4 @@
-package ws.tilda.anastasia.myprojects;
+package ws.tilda.anastasia.myprojects.project_listing;
 
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.Observer;
@@ -14,6 +14,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ws.tilda.anastasia.myprojects.R;
 
 public class MainActivity extends AppCompatActivity implements LifecycleOwner, MainContractor.MainView {
     @Inject

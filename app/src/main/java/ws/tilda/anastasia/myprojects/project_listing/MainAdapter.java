@@ -1,4 +1,4 @@
-package ws.tilda.anastasia.myprojects;
+package ws.tilda.anastasia.myprojects.project_listing;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ws.tilda.anastasia.myprojects.R;
 
 public class MainAdapter extends BaseAdapter {
     @BindView(R.id.tv_title)

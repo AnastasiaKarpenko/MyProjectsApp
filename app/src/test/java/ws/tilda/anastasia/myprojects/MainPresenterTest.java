@@ -5,7 +5,9 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.junit.Assert.*;
+import ws.tilda.anastasia.myprojects.project_listing.MainContractor;
+import ws.tilda.anastasia.myprojects.project_listing.MainPresenter;
+
 import static org.mockito.Mockito.verify;
 
 public class MainPresenterTest {
