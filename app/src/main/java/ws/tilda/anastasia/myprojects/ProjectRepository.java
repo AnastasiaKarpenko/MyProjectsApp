@@ -24,7 +24,7 @@ public class ProjectRepository {
 
     public void getProjectList() {
         final MutableLiveData<List<ProjectModel>> data = new MutableLiveData<>();
-        Observable.range(0,5)
+        Observable.range(0, 5)
                 .subscribe(new Observer<Integer>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -33,7 +33,9 @@ public class ProjectRepository {
 
                     @Override
                     public void onNext(Integer integer) {
-
+                        ProjectModel projectModel = new ProjectModel();
+                        projectModel.title = "Project " + integer;
+                        dummyProjectList.add(projectModel);
                     }
 
                     @Override
@@ -43,7 +45,8 @@ public class ProjectRepository {
 
                     @Override
                     public void onComplete() {
-
+                        data.setValue(dummyProjectList);
+                        MainViewModel.projectListing = data;
                     }
                 });
 
