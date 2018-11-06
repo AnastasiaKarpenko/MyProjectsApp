@@ -1,5 +1,6 @@
 package ws.tilda.anastasia.myprojects.project_listing;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -8,6 +9,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
 public class ProjectListingModel {
+
     @Inject
     ProjectListingModel() {
 

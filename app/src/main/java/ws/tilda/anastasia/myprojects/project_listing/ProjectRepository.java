@@ -10,16 +10,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 public class ProjectRepository {
+
     @Inject
     ProjectListingModel mProjectListingModel;
 
-    List<ProjectModel> mProjectModelList;
-
     List<ProjectModel> items;
 
-    //@Inject
-    public ProjectRepository(List<ProjectModel> projectModelList) {
-        mProjectModelList = projectModelList;
+//    @Inject
+    public ProjectRepository() {
+
     }
 
     public LiveData<List<ProjectModel>> getProjectList() {
