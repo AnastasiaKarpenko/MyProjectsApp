@@ -1,14 +1,19 @@
 package ws.tilda.anastasia.myprojects;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.os.CountDownTimer;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
 public class ProjectRepository {
+
     private static final ProjectRepository ourInstance = new ProjectRepository();
+    List<ProjectModel> dummyProjectList = new ArrayList<>();
+
 
     public static ProjectRepository getInstance() {
         return ourInstance;
@@ -17,27 +22,34 @@ public class ProjectRepository {
     private ProjectRepository() {
     }
 
-    public LiveData<List<ProjectModel>> getProjectList() {
+    public void getProjectList() {
         final MutableLiveData<List<ProjectModel>> data = new MutableLiveData<>();
+        Observable.range(0,5)
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-        // CountDownTimer will be called every 30 seconds and update the view with the new data
-        CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) {
-            @Override
-            public void onTick(long l) {
+                    }
 
-            }
+                    @Override
+                    public void onNext(Integer integer) {
 
-            @Override
-            public void onFinish() {
-                data.setValue(getList());
-            }
-        }.start();
+                    }
 
-        return data;
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 
     public List<ProjectModel> getList() {
-        List<ProjectModel> dummyProjectList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             ProjectModel projectModel = new ProjectModel();
             projectModel.title = "Project " + i;
